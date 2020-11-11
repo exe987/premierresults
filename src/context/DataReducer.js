@@ -1,18 +1,22 @@
-import { LIVE_SCORES } from "../../types";
+import { LIVE_SCORES, TEAMS_LALIGA, LAST_RESULTS } from "../types";
 
-  
-  export default (state, action) => {
-    switch (action.type) {
-      case LIVE_SCORES:
-        return{
-          ...state,
-          title: action.payload.title,
-          article: action.payload.abstract,
-        }
+export default (state, action) => {
+  switch (action.type) {
+    case TEAMS_LALIGA:
+      return {
+        ...state,
+        teams: action.payload,
+      };
 
+    case LAST_RESULTS:
+      return {
+        ...state,
+        last_results: action.payload.filter(
+          (data) => data.competition_name === "Primera División"
+        ),
+      };
 
-      default:
-        return state;
-    }
-  };
-  
+    default:
+      return state;
+  }
+};

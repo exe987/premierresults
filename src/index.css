@@ -2,3 +2,20 @@
   margin: 0;
   padding: 0;
 }
+.borde{
+  border: 1px solid black;
+}
+.cardheight{
+  height: 150px;
+}
+.equipo{
+  font-size: 12px;
+}
+/*
+
+CARROUSEL
+
+
+*/
+
+

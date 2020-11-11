@@ -1,32 +1,51 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import DataContext from "../context/DataContext";
 
 const Header = () => {
+
+  //CONTEXT INFO
+  const DatadeContext = useContext(DataContext);
+  const {getTeams, teams } = DatadeContext;
+
+  useEffect(() => {
+    getTeams();
+    // eslint-disable-next-line
+  }, []);
+
   return (
-    <div className="colums ">
-      <header className="column is-12 has-background-black">
-        <h1 className="title is-1 ">
+    <header className="columns">
+      <div className="column is-12 has-background-warning">
+        <a href='#!' className="column is-3">
+          <figure className="image is-128x128 has-background-warning">
+            <img alt='LaLiga' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaLiga_Santander.svg/1200px-LaLiga_Santander.svg.png" />
+          </figure>
+        </a>
+
+        <h1 className="columns title is-1 ">
           <a
-            className="navbar-item has-background-black has-text-danger"
+            className="navbar-item has-background-danger-dark has-text-centered has-text-warning column"
             href="#!"
           >
-            ENGLISH PREMIER LEAGUE
+            LIGA DE FUTBOL PROFESIONAL
           </a>
         </h1>
-     
-        <div className="columns">
-          <div id="navbarBasicExample" className="navbar-menu">
-            <div className="navbar-start">
-              <a className="navbar-item has-text-danger" href="#!">FIXTURE</a>
 
-              <a className="navbar-item has-text-danger" href="#!">POSITIONS</a>
-
-              <a className="navbar-item has-text-danger" href="#!">LIVE</a>
-            </div>
-          </div>
+        <div className="has-background-white columns">
+          {teams.map((team) => (
+            <a
+              key={team.id}
+              className="column is-inline-block is-2-mobile"
+              href="#!"
+            >
+              <figure className="image is-24x24">
+                <img alt={team.abbr} src={team.shield} />
+              </figure>
+            </a>
+          ))}
         </div>
-        
-      </header>
-    </div>
+      </div>
+      
+    </header>
   );
 };
 export default Header;
