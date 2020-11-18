@@ -12,6 +12,8 @@ const LastResults = () => {
     }, 1000);
   }, []);
 
+  if(!last_results)return null;
+
   return (
     <div className="columns mt-1 is-gapless">
       {last_results.map((data) => (

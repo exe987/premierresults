@@ -5,7 +5,7 @@ const InfoLaLiga = () => {
   const DatadeContext = useContext(DataContext);
   const { teams, getTeams } = DatadeContext;
 
- 
+  if (!teams) return null;
 
   return (
     <div className="column is-3">
@@ -48,22 +48,18 @@ const InfoLaLiga = () => {
             <tr key={data.team}>
               <th>{data.pos}</th>
               <td>
-                <a
-                  href="#!"
-                  title={data.basealias}
-                >
-                    {data.team}
+                <a href="#!" title={data.basealias}>
+                  {data.team}
                 </a>
-             
               </td>
-          <td>{ data.wins + data.draws + data.losses  }</td>
+              <td>{data.wins + data.draws + data.losses}</td>
               <td> {data.wins} </td>
-              <td> {data.draws}  </td>
-              <td> {data.losses}   </td>
-              <td> {data.gf}  </td>
+              <td> {data.draws} </td>
+              <td> {data.losses} </td>
+              <td> {data.gf} </td>
               <td> {data.ga} </td>
               <td> {data.avg} </td>
-              <td> {data.points}  </td>
+              <td> {data.points} </td>
             </tr>
           ))}
         </tbody>
