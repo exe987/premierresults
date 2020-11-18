@@ -1,4 +1,10 @@
-import { LIVE_SCORES, TEAMS_LALIGA, LAST_RESULTS } from "../types";
+import {
+  LIVE_SCORES,
+  TEAMS_LALIGA,
+  LAST_RESULTS,
+  LAST_NEWS,
+  READ_NOTICE,
+} from "../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -16,6 +22,17 @@ export default (state, action) => {
         ),
       };
 
+    case LAST_NEWS:
+      return {
+        ...state,
+        news: action.payload,
+      };
+
+    case READ_NOTICE:
+      return {
+        ...state,
+        notice: state.news[action.payload],
+      };
     default:
       return state;
   }

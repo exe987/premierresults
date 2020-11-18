@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import LastResults from "./components/LastResults";
 import DataState from "./context/DataState";
 import InfoLaLiga from "./components/InfoLaLiga";
+import News from './components/News'
+
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <div className="columns">
         <InfoLaLiga />
       </div>
+      <News/>
     </DataState>
   );
 }

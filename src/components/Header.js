@@ -2,10 +2,9 @@ import React, { useContext, useEffect } from "react";
 import DataContext from "../context/DataContext";
 
 const Header = () => {
-
   //CONTEXT INFO
   const DatadeContext = useContext(DataContext);
-  const {getTeams, teams } = DatadeContext;
+  const { getTeams, teams } = DatadeContext;
 
   useEffect(() => {
     getTeams();
@@ -13,11 +12,14 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="columns">
+    <header className="columns slider">
       <div className="column is-12 has-background-warning">
-        <a href='#!' className="column is-3">
+        <a href="#!" className="column is-3">
           <figure className="image is-128x128 has-background-warning">
-            <img alt='LaLiga' src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaLiga_Santander.svg/1200px-LaLiga_Santander.svg.png" />
+            <img
+              alt="LaLiga"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaLiga_Santander.svg/1200px-LaLiga_Santander.svg.png"
+            />
           </figure>
         </a>
 
@@ -30,11 +32,11 @@ const Header = () => {
           </a>
         </h1>
 
-        <div className="has-background-white columns">
+        <div className="has-background-white columns slide-track">
           {teams.map((team) => (
             <a
               key={team.id}
-              className="column is-inline-block is-2-mobile"
+              className="column is-inline-block is-2-mobile slide"
               href="#!"
             >
               <figure className="image is-24x24">
@@ -44,7 +46,6 @@ const Header = () => {
           ))}
         </div>
       </div>
-      
     </header>
   );
 };
