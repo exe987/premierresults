@@ -1,20 +1,18 @@
 import React from "react";
-import Header from "./components/Header";
-import LastResults from "./components/LastResults";
-import DataState from "./context/DataState";
+import Index from "./components/Index";
 import InfoLaLiga from "./components/InfoLaLiga";
-import News from './components/News'
-
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import DataState from "./context/DataState";
 
 function App() {
   return (
     <DataState>
-      <Header />
-      <LastResults />
-      <div className="columns">
-        <InfoLaLiga />
-      </div>
-      <News/>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Index} />
+          <Route exact path="/info" component={InfoLaLiga} />
+        </Switch>
+      </BrowserRouter>
     </DataState>
   );
 }

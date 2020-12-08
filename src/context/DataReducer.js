@@ -1,10 +1,4 @@
-import {
-  LIVE_SCORES,
-  TEAMS_LALIGA,
-  LAST_RESULTS,
-  LAST_NEWS,
-  READ_NOTICE,
-} from "../types";
+import { TEAMS_LALIGA, LAST_RESULTS, LAST_NEWS, READ_NOTICE } from "../types";
 
 export default (state, action) => {
   switch (action.type) {

@@ -2,6 +2,15 @@
   margin: 0;
   padding: 0;
 }
+body{
+  width:100vw;
+  height:auto;
+  background-image:url(./images/dce7c00707aa83e4d211e75a81e9e2cb.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-attachment:fixed;
+  }
 .borde {
   border: 1px solid black;
 }

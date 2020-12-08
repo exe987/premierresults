@@ -14,13 +14,13 @@ const News = () => {
     // eslint-disable-next-line
   }, []);
 
+  //MODAL
   const openCloseModal = (a) => {
     if (notice) {
       showNotice(false);
     } else {
       showNotice(true);
       readNotice(a);
-      console.log(a)
     }
   };
 
@@ -37,7 +37,7 @@ const News = () => {
             <div className="media">
               <div className="media-content">
                 <p className="title is-5">
-                  <a onClick={()=>openCloseModal(key)}> {data.title} </a>
+                  <a onClick={() => openCloseModal(key)} href='#!'> {data.title} </a>
                 </p>
               </div>
             </div>
@@ -46,13 +46,9 @@ const News = () => {
                 <p className="is-success">{data.description}</p>
               </div>
             </div>
-            {!notice ? null : (
-            <Notice openCloseModal={openCloseModal}  />
-          )}
+            {!notice ? null : <Notice openCloseModal={openCloseModal} />}
           </div>
-        
         </div>
-        
       ))}
     </div>
   );
